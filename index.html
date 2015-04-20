@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Precious Coupons!</title>
+    <link rel="stylesheet" type="text/css" href="myApp.css" />
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div><p>{{ mainTitle }}</p></div>
+    <div>
+        <table>
+            <tr ng-repeat="x in coupons">
+                <td><a href="" ng-click="showDetails(x.code)">{{x.title}} <br> {{x.subtitle}} <br> {{x.expiration}}</a></td>
+            </tr>
+        </table>
+    </div>
+    <p></p>
+    <div id="footer">JCPenney | Home | Search | Scan | Sign Up | Sign In</div>
+</div>
+
+<script src="angular.js"></script>
+<script src="myApp.js"></script>
+<script src="myCtrl.js"></script>
+
+</body>
+</html>
