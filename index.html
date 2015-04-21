@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Precious Coupons!</title>
-    <link rel="stylesheet" type="text/css" href="myApp.css" />
+    <title>My Precious Coupons</title>
+
+    <script type="application/javascript" src="./Framework/jquery-1.8.2.js"></script>
+    <script type="application/javascript" src="./Framework/angular.js"></script>
+    <!--<script type="application/javascript" src="./Framework/handlebars-1.0.0.beta.6.js"></script>-->
+    <script type="application/javascript" src="./Framework/Class.js"></script>
+    <script type="application/javascript" src="./Framework/Base.js"></script>
+    <script type="application/javascript" src="./Framework/TemplateProvider.js"></script>
+    <script type="application/javascript" src="./Framework/Widget.js"></script>
+    <script type="application/javascript" src="./Framework/WidgetWithTemplate.js"></script>
+    <script type="application/javascript" src="./Widgets/CouponListWidget/CouponListWidget.js"></script>
+    <script type="application/javascript" src="./Widgets/StickyWidget/StickyWidget.js"></script>
 </head>
 <body>
+<div id="couponListContainer"></div>
+<div id="stickyContainer"></div>
 
-<div ng-app="myApp" ng-controller="myCtrl">
-    <div><p>{{ mainTitle }}</p></div>
-    <div>
-        <table>
-            <tr ng-repeat="x in coupons">
-                <td><a href="" ng-click="showDetails(x.code)">{{x.title}} <br> {{x.subtitle}} <br> {{x.expiration}}</a></td>
-            </tr>
-        </table>
-    </div>
-    <p></p>
-    <div id="footer">JCPenney | Home | Search | Scan | Sign Up | Sign In</div>
-</div>
-
-<script src="angular.js"></script>
-<script src="myApp.js"></script>
-<script src="myCtrl.js"></script>
-
+<script type="application/javascript">
+    $(document).ready(function(){
+        var clWid = new Clazz.CouponListWidget();
+        var clCont = document.getElementById("couponListContainer");
+        clWid.render(clCont);
+        
+        var stickyWid = new Clazz.StickyWidget();
+        var stcikyCont = document.getElementById("stickyContainer");
+        stickyWid.render(stcikyCont);
+    });
+</script>
 </body>
 </html>
