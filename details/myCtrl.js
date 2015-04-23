@@ -20,24 +20,26 @@ app.controller("myCtrl", function($scope, $location) {
     
     //default one
     $scope.selectedCoupon = $scope.coupons[0];
-    $scope.selectedCoupon = $scope.coupons[$scope.mycid-1];
+    if ($scope.mycid > 0) {
+        $scope.selectedCoupon = $scope.coupons[$scope.mycid-1];
+    }
     
     $scope.showDetails = function(currentCoupon) {
         console.log(currentCoupon.title);
         $scope.selectedCoupon = currentCoupon;
     };
    
-    $scope.printCoupon = function(elemId) {
+    $scope.printCoupon = function(elemId, mycode) {
         var couponDetails = document.getElementById(elemId).innerHTML;
 
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
             var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.window.focus();
-            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title>' +
+            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
                 '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
                 '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
                 '</head><body onload="window.print()"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
-                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
+                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
             
         } else {
             var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
