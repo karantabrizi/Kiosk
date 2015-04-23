@@ -34,27 +34,32 @@ app.controller("myCtrl", function($scope, $location) {
             var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.window.focus();
             popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title>' +
-                '    <script type="application/javascript" src="../jquery-1.8.2.js"></script><script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body onload="window.print()"><div></div>' + couponDetails + '<p></p><div id="div-qr"></div></body>' +
+                '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
+                '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
+                '</head><body onload="window.print()"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
                 '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
+            
             popupWin.onbeforeunload = function (event) {
+                popupWin.document.close();
                 popupWin.close();
                 return '.\n';
             };
             
-
             popupWin.onabort = function (event) {
                 popupWin.document.close();
                 popupWin.close();
             }
         } else {
-            var popupWin = window.open('', '_blank', 'width=800,height=600');
+            var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.document.open();
-            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title></head><body onload="window.print()">' + couponDetails + '</body></html>');
+            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title>' +
+                '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
+                '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
+                '</head><body onload="window.print()"><div></div>' + couponDetails + 
+                '<p></p><div id="div-qr"></div></body>' +
+                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
             popupWin.document.close();
         }
         popupWin.document.close();
-        popupWin.close();
     };
-    
 });
