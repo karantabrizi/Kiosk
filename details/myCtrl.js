@@ -39,16 +39,6 @@ app.controller("myCtrl", function($scope, $location) {
                 '</head><body onload="window.print()"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
                 '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
             
-            popupWin.onbeforeunload = function (event) {
-                popupWin.document.close();
-                popupWin.close();
-                return '.\n';
-            };
-            
-            popupWin.onabort = function (event) {
-                popupWin.document.close();
-                popupWin.close();
-            }
         } else {
             var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.document.open();
