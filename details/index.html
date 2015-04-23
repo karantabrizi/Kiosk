@@ -15,8 +15,8 @@
     <div id="kiosk">
         <div id="container">
             <div id="couponListSide">
-                <div class="couponBoxSide" ng-repeat="x in coupons">
-                    <div class="couponSide" ng-click="showDetails(x)">
+                <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSet(x.id)}" >
+                    <div class="couponSide" ng-click="showDetails(x)" >
                         <span style="color: red; font-size: 18px;">{{x.title}}</span><br>
                         <span style="color: grey; font-size: 16px;">{{x.subtitle}}</span><br>
                         <span style="color: lightgrey; font-size: 12px;">{{x.expiration}}</span>

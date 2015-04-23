@@ -58,4 +58,9 @@ app.controller("myCtrl", function($scope, $location) {
         }
         popupWin.document.close();
     };
+    
+    $scope.isSet = function(boxID){
+      return $scope.selectedCoupon.id === boxID;
+    };
+    
 });
