@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Precious Coupons!</title>
+    <link rel="stylesheet" type="text/css" href="myApp.css" />
+</head>
+<body>
+
+<!-- Resolution 1920 x 1080 -->
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div id="kiosk">
+        <div id="container">
+            <div id="couponList">
+                <div class="couponBox" ng-click="showDetails(x.id)" ng-repeat="x in coupons">
+                    <div class="coupon">
+                        <span style="color: red; font-size: 32px;">{{x.title}}</span><br>
+                        <span style="color: grey; font-size: 24px;">{{x.subtitle}}</span><br>
+                        <span style="color: lightgrey; font-size: 18px;">{{x.expiration}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nofloat"></div>
+        </div>
+        <div id="sticky">
+            <div id="stickyLogo">JCPenney</div>
+            <div id="stickyHome">Home</div>
+            <div id="stickyHome">Search</div>
+            <div id="stickyHome">Scan</div>
+            <div id="stickyHome">Sign Up</div>
+            <div id="stickyHome">Sign In</div>
+            <div class="nofloat"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../angular.js"></script>
+<script src="./myApp.js"></script>
+<script src="./myCtrl.js"></script>
+
+</body>
+</html>
