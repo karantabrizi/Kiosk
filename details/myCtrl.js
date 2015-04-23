@@ -23,12 +23,16 @@ app.controller("myCtrl", function($scope, $location) {
     if ($scope.mycid > 0) {
         $scope.selectedCoupon = $scope.coupons[$scope.mycid-1];
     }
+
+    $scope.goHome = function() {
+        location.href = "../home#/";
+    };
     
     $scope.showDetails = function(currentCoupon) {
         console.log(currentCoupon.title);
         $scope.selectedCoupon = currentCoupon;
     };
-   
+
     $scope.printCoupon = function(elemId, mycode) {
         var couponDetails = document.getElementById(elemId).innerHTML;
 

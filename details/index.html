@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>My Precious Coupons!</title>
-    <link rel="stylesheet" type="text/css" href="myApp.css" />
+    <link rel="stylesheet" type="text/css" href="../common.css" />
+    <link rel="stylesheet" type="text/css" href="./myApp.css" />
     <script type="application/javascript" src="../jquery-1.8.2.js"></script>
     <script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>
 </head>
@@ -35,12 +36,12 @@
             <div class="nofloat"></div>
         </div>
         <div id="sticky">
-            <div id="stickyLogo">JCPenney</div>
-            <div id="stickyHome"><a href="../home#/">Home</a></div>
-            <div id="stickyHome">Search</div>
-            <div id="stickyHome">Scan</div>
-            <div id="stickyHome">Sign Up</div>
-            <div id="stickyHome">Sign In</div>
+            <div id="stickyLogo"></div>
+            <div id="stickyHome" ng-click="goHome()"></div>
+            <div id="stickySearch"></div>
+            <div id="stickyScan"></div>
+            <div id="stickySignUp"></div>
+            <div id="stickySignIn"></div>
             <div class="nofloat"></div>
         </div>
     </div>
