@@ -14,7 +14,7 @@
 <div ng-app="myApp" ng-controller="myCtrl">
     <div id="kiosk">
         <div id="container">
-            <div id="couponListSide">
+            <div id="couponListSide" style="float: left;">
                 <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSet(x.id)}" >
                     <div class="couponSide" ng-click="showDetails(x)" >
                         <span style="color: red; font-size: 18px;">{{x.title}}</span><br>
@@ -24,14 +24,18 @@
                 </div>
             </div>
             <div id="couponDetails">
-                <div id="printDiv">
+                <div id="printDiv" style="float: left; border: 5px dashed red; text-transform: uppercase; text-align: center;" >
                     <p>
-                        <span style="color: red; font-size: 18px;">{{selectedCoupon.title}}</span><br>
-                        <span style="color: grey; font-size: 16px;">{{selectedCoupon.subtitle}}</span><br>
-                        <span style="color: lightgrey; font-size: 12px;">{{selectedCoupon.expiration}}</span>
+                        <p style="font-size: 20px;">{{selectedCoupon.title}}<br>
+                        <span style="font-size: 20px;">{{selectedCoupon.expiration}}</span></p><br>
+                        <p style="color: red; weigth:bold; font-size: 50px;">10% OFF*<br>
+                        <span style="color: red; weigth:bold; font-size: 40;">FORMAL UPDO OR NATURAL STYLING</span><br>
+                        <span style="color: red; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
+                        <p style="color: DARKgrey; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; weigth:bold; " ng-click='printCoupon("printDiv", selectedCoupon.code)'>PRINT COUPON ></span></p>
+                        <p style="color: lightgrey; font-size: 12px;" >BARCODE IMAGE</p>
                     </p>
-                </div>
-                <button style="font-size: 24px;" ng-click='printCoupon("printDiv", selectedCoupon.code)'>PRINT</button>
+                </div><br>
+                <div>more details</div>
             </div>
             <div class="nofloat"></div>
         </div>
