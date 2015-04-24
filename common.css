@@ -1,62 +1,57 @@
 div#kiosk {
-    width: 1900px;
-    height: 1060px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-div#container {
-    border: 1px solid grey;
-    width: 1880px;
-    height: 840px;
+    margin: 0px;
+    border: 1px solid;
+    padding: 0px;
+    width: 1920px;
+    height: 1080px;
 }
 
 div#sticky {
-    border: 1px solid grey;
-    width: 1880px;
-    height: 180px;
+    margin: 0px;
+    border: 1px solid;
+    padding: 0px;
+    width: 1920px;
+    height: 200px;
 }
 
 div#stickyLogo {
-    width: 940px;
-    height: 180px;
+    width: 920px;
+    height: 200px;
     background-image: url(./images/jcpenney.png);
     float: left;
 }
 
 div#stickyHome {
-    width: 188px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url(./images/home.png);
     float: left;
 }
 
 div#stickySearch {
-    width: 188px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url(./images/search.png);
     float: left;
 }
 
 div#stickyScan {
-    width: 188px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url(./images/scan.png);
     float: left;
 }
 
 div#stickySignUp {
-    width: 188px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url(./images/signup.png);
     float: left;
 }
 
 div#stickySignIn {
-    width: 188px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url(./images/signin.png);
     float: left;
 }

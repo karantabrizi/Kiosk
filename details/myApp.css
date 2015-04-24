@@ -1,27 +1,33 @@
 div#couponListSide {
+    margin: 0px;
     border: 1px solid grey;
     overflow: auto;
-    width: 630px;
-    height: 840px;
-    float: left;
-}
-
-div#couponDetails {
-    border: 1px solid grey;
-    height: 840px;
+    padding: 0px;
+    width: 550px;
+    height: 880px;
 }
 
 div.couponBoxSide {
-    width: 630px;
+    margin: 0px;
+    border: 1px solid grey;
+    width: 550px;
     height: 150px;
 }
 
 div.couponSide {
     border: 1px solid grey;
-    width: 580px;
-    height: 110px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    width: 550px;
+    height: 70px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+div#couponDetails {
+    margin: 0px;
+    border: 1px solid grey;
+    padding: 0px;
+    width: 1365px;
+    height: 880px;
 }

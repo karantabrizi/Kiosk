@@ -13,32 +13,37 @@
 
 <div ng-app="myApp" ng-controller="myCtrl">
     <div id="kiosk">
-        <div id="container">
-            <div id="couponListSide" style="float: left;">
-                <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSet(x.id)}" >
-                    <div class="couponSide" ng-click="showDetails(x)" >
-                        <span style="color: red; font-size: 18px;">{{x.title}}</span><br>
-                        <span style="color: grey; font-size: 16px;">{{x.subtitle}}</span><br>
-                        <span style="color: lightgrey; font-size: 12px;">{{x.expiration}}</span>
-                    </div>
+        <div id="couponListSide" style="float: left;">
+            <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSet(x.id)}" >
+                <div class="couponSide" ng-click="showDetails(x)" >
+                    <span style="color: red; font-size: 18px;">{{x.title}}</span><br>
+                    <span style="color: grey; font-size: 16px;">{{x.subtitle}}</span><br>
+                    <span style="color: lightgrey; font-size: 12px;">{{x.expiration}}</span>
                 </div>
             </div>
-            <div id="couponDetails">
-                <div id="printDiv" style="float: left; border: 5px dashed red; text-transform: uppercase; text-align: center;" >
-                    <p>
-                        <p style="font-size: 20px;">{{selectedCoupon.title}}<br>
-                        <span style="font-size: 20px;">{{selectedCoupon.expiration}}</span></p><br>
-                        <p style="color: red; weigth:bold; font-size: 50px;">10% OFF*<br>
-                        <span style="color: red; weigth:bold; font-size: 40;">FORMAL UPDO OR NATURAL STYLING</span><br>
-                        <span style="color: red; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
-                        <p style="color: DARKgrey; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; weigth:bold; " ng-click='printCoupon("printDiv", selectedCoupon.code)'>PRINT COUPON ></span></p>
-                        <p style="color: lightgrey; font-size: 12px;" >BARCODE IMAGE</p>
-                    </p>
-                </div><br>
-                <div>more details</div>
+        </div>
+        <div id="couponDetails" style="float: left;">
+            <div id="printDiv" style="float: left; border: 5px dashed red; text-transform: uppercase; text-align: center;" >
+                <p></p>
+                <p style="font-size: 36px; color: red;">{{selectedCoupon.title}}<br>
+                <span style="font-size: 24px; color: lightgrey;">{{selectedCoupon.expiration}}</span></p><br>
+                <p style="color: red; weigth:bold; font-size: 40px;">10% OFF*<br>
+                <span style="color: red; weigth:bold; font-size: 36;">FORMAL UPDO OR NATURAL STYLING</span><br>
+                <span style="color: red; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
+                <p style="color: DARKgrey; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; weigth:bold; " ng-click='printCoupon("printDiv", selectedCoupon.code)'>PRINT COUPON ></span>
+                </p>
+                <p style="color: lightgrey; font-size: 12px;" ><img src="../images/barcode.png" alt="" /></p>
+            </div>
+            <div style="float: left">
+                * Valid 4/20-4/27/2015, 10% off formal updo or natural styling with a designer or senior designer,
+                excluding taxes. New clients only. One coupon per customer, per transaction, must be provided/surrendered 
+                at time of purchase. Coupon cannot be combined with any other offer. Coupon cannot be used for payment on
+                account. Coupon cannot be redeemed as cash or merchandise credit if merchandise is returned. Savings applyed
+                on qualifying items on prorated basis. No cash value. REPRODUCTIONS WILL NOT BE ACCEPTED.
             </div>
             <div class="nofloat"></div>
         </div>
+        <div class="nofloat"></div>
         <div id="sticky">
             <div id="stickyLogo"></div>
             <div id="stickyHome" ng-click="goHome()"></div>
