@@ -1,7 +1,8 @@
 div#couponList {
     margin: 0px;
     border: 1px solid grey;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-color: #EAEAEA;
     width: 1920px;
     height: 880px;
