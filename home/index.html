@@ -7,16 +7,14 @@
 </head>
 <body>
 
-<!-- Resolution 1920 x 1080 -->
-
 <div ng-app="myApp" ng-controller="myCtrl">
     <div id="kiosk">
         <div id="couponList">
             <div class="couponBox" ng-click="showDetails(x.id)" ng-repeat="x in coupons">
                 <div class="coupon">
-                    <span style="color: red; font-size: 32px;">{{x.title}}</span><br>
-                    <span style="color: grey; font-size: 24px;">{{x.subtitle}}</span><br>
-                    <span style="color: lightgrey; font-size: 18px;">{{x.expiration}}</span>
+                    <span style="color: red; font-size: 36px; font-weight:bold;">{{x.title}}</span><br>
+                    <span style="color: darkgrey; font-size: 28px;">{{x.subtitle}}</span><br>
+                    <span style="color: lightgrey; font-size: 24px;">{{x.expiration}}</span>
                 </div>
             </div>
             <div class="nofloat"></div>

@@ -2,12 +2,12 @@ app.controller("myCtrl", function($scope, $location) {
     $scope.mycid = $location.search().mycid;
     
     $scope.coupons = [
-        {"id":"1", "code":"ABCDEFGH", "title":"COUPON ABCDEFGH YES! CUT THIS ONE!", "subtitle":"WHEN YOU SPEND $50 OR MORE", "expiration":"Valid until 4/27/15"},
-        {"id":"2", "code":"EFGHHIJK", "title":"COUPON EFGHHIJK", "subtitle":"SPEND $50 OR MORE", "expiration":"Valid 4/20/15-4/27/15"},
-        {"id":"3", "code":"HIJKLMNO", "title":"COUPON HIJKLMNO", "subtitle":"SPEND $50 OR MORE", "expiration":"Valid until 4/27/15"},
-        {"id":"4", "code":"LMNOPQRW", "title":"COUPON LMNOPQRW", "subtitle":"SPEND $50 OR MORE", "expiration":"Valid 4/20/15-4/27/15"},
-        {"id":"5", "code":"PQRSTUVW", "title":"COUPON PQRSTUVW", "subtitle":"SPEND $50 OR MORE", "expiration":"Valid until 4/27/15"},
-        {"id":"6", "code":"TUVWXYZA", "title":"COUPON TUVWXYZA", "subtitle":"SPEND $50 OR MORE", "expiration":"Valid 4/20/15-4/27/15"}
+        {"id":"1", "code":"ABCDEFGH", "discount":"20%", "title":"EXTRA 20% OFF WITH JCP CARD PURCHASE", "subtitle":"", "expiration":"Valid 4/27-5/17"},
+        {"id":"2", "code":"EFGHHIJK", "discount":"10%", "title":"$15 BONUSCASH", "subtitle":"WHEN YOU SPEND $50 OR MORE", "expiration":"Valid 4/27-5/17"},
+        {"id":"3", "code":"HIJKLMNO", "discount":"15%", "title":"EXTRA 15% OFF", "subtitle":"WHEN YOU SPEND $40 OR MORE", "expiration":"Valid 4/27-5/17"},
+        {"id":"4", "code":"LMNOPQRW", "discount":"10%", "title":"$20 BONUSCASH", "subtitle":"WHEN YOU SPEND $60 OR MORE", "expiration":"Valid 4/27-5/17"},
+        {"id":"5", "code":"PQRSTUVW", "discount":"20%", "title":"EXTRA 20% OFF WITH JCP CARD PUCHASE", "subtitle":"", "expiration":"Valid 4/27-5/31"},
+        {"id":"6", "code":"TUVWXYZA", "discount":"15%", "title":"EXTRA 15% OFF", "subtitle":"WHEN YOU SPEND $40 OR MORE", "expiration":"Valid 4/27-5/31"}
     ];
     
     //default one
@@ -29,21 +29,20 @@ app.controller("myCtrl", function($scope, $location) {
         var couponDetails = document.getElementById(elemId).innerHTML;
 
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-            var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+            var popupWin = window.open('', '_blank', 'width=800,height=800,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.window.focus();
             popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
                 '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
                 '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body onload="window.print()"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
+                '</head><body style="text-align: center;"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
                 '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
-            
         } else {
-            var popupWin = window.open('', '_blank', 'width=600,height=600,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+            var popupWin = window.open('', '_blank', 'width=800,height=800,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.document.open();
             popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title>' +
                 '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
                 '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body onload="window.print()"><div></div>' + couponDetails + 
+                '</head><body><div></div>' + couponDetails + 
                 '<p></p><div id="div-qr"></div></body>' +
                 '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
             popupWin.document.close();
@@ -51,8 +50,7 @@ app.controller("myCtrl", function($scope, $location) {
         popupWin.document.close();
     };
     
-    $scope.isSet = function(boxID){
+    $scope.isSelected = function(boxID){
       return $scope.selectedCoupon.id === boxID;
     };
-    
 });
