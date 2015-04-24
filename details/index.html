@@ -14,10 +14,9 @@
         <div id="couponListSide" style="float: left;">
             <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSelected(x.id)}" >
                 <div class="couponSide" ng-click="showDetails(x)" >
-                    <span style="color: red; font-size: 24px;">{{x.title}}</span><br>
-                    <span style="color: grey; font-size: 18px;">{{x.subtitle}}</span><br>
-                    <span style="color: grey; font-size: 14px;">{{x.expiration}}</span>
-
+                    <span style="color: #CC0000; font-size: 24px;">{{x.title}}</span><br>
+                    <span style="color: #666666; font-size: 18px;">{{x.subtitle}}</span><br>
+                    <span style="color: #999999; font-size: 14px;">{{x.expiration}}</span>
                 </div>
             </div>
         </div>
@@ -25,20 +24,20 @@
             <div id="couponCutArea" style="float: left;" >
                 <div id="couponPrint">
                     <p></p>
-                    <p style="font-size: 36px; color: red;">{{selectedCoupon.title}}<br>
-                    <span style="font-size: 24px; color: lightgrey;">{{selectedCoupon.expiration}}</span></p>
-                    <p style="color: red; weigth:bold; font-size: 40px;">{{selectedCoupon.discount}} OFF*<br>
-                    <span style="color: red; weigth:bold; font-size: 36;">FORMAL UPDO OR NATURAL STYLING</span><br>
-                    <span style="color: red; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
+                    <p style="font-size: 36px; color: #CC0000;">{{selectedCoupon.title}}<br>
+                    <span style="font-size: 24px; color: #999999;">{{selectedCoupon.expiration}}</span></p>
+                    <p style="color: #CC0000; weigth:bold; font-size: 40px;">{{selectedCoupon.discount}} OFF*<br>
+                    <span style="color: #CC0000; weigth:bold; font-size: 36;">FORMAL UPDO OR NATURAL STYLING</span><br>
+                    <span style="color: #CC0000; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
                 </div>
                 <div id="couponBarcode">
-                    <p style="color: darkgrey; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; weigth:bold; " ng-click='printCoupon("couponPrint", selectedCoupon.code)'>PRINT COUPON ></span>
+                    <p style="color: #7A7A7A; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; font-weigth:bold; font-size: 20px;" ng-click='printCoupon("couponPrint", selectedCoupon.code)'>PRINT COUPON ></span>
                     </p>
                     <p style="color: lightgrey; font-size: 12px;" ><img src="../images/barcode.png" alt="{{selectedCoupon.code}}" /></p>
                 </div>
             </div>
             <div id="couponMoreText" style="float: left">
-                <span style="font-size: 18px; font-family:Arial;"><b>* {{selectedCoupon.expiration}},</b> {{selectedCoupon.discount}} off formal updo or natural styling with a designer or senior designer, excluding taxes. New clients only. One coupon per customer, per transaction, must be provided/surrendered  at time of purchase. Coupon cannot be combined with any other offer. Coupon cannot be used for payment on account. Coupon cannot be redeemed as cash or merchandise credit if merchandise is returned. Savings applyed on qualifying items on prorated basis. No cash value. REPRODUCTIONS WILL NOT BE ACCEPTED.</span>
+                <span style="color: #A7A7A7; font-size: 18px; font-family:Arial;"><b style="color: #7A7A7A;">* {{selectedCoupon.expiration}},</b> {{selectedCoupon.discount}} off formal updo or natural styling with a designer or senior designer, excluding taxes. New clients only. One coupon per customer, per transaction, must be provided/surrendered  at time of purchase. Coupon cannot be combined with any other offer. Coupon cannot be used for payment on account. Coupon cannot be redeemed as cash or merchandise credit if merchandise is returned. Savings applyed on qualifying items on prorated basis. No cash value. REPRODUCTIONS WILL NOT BE ACCEPTED.</span>
             </div>
             <div class="nofloat"></div>
         </div>

@@ -1,7 +1,8 @@
 div#couponList {
     margin: 0px;
     border: 1px solid grey;
-    overflow: auto;
+    overflow: scroll;
+    background-color: #EAEAEA;
     width: 1920px;
     height: 880px;
 }
@@ -18,12 +19,13 @@ div.couponBox {
 }
 
 div.coupon {
-    border: 1px solid grey;
     border-radius: 15px;
     width: 640px;
     height: 180px;
+    background-color: #FFFFFF;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 70px;
     padding-bottom: 70px;
+    box-shadow: 0px 0px 5px black;
 }

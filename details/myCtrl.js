@@ -29,22 +29,23 @@ app.controller("myCtrl", function($scope, $location) {
         var couponDetails = document.getElementById(elemId).innerHTML;
 
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-            var popupWin = window.open('', '_blank', 'width=800,height=800,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+            var popupWin = window.open('', '_blank', 'width=800,height=800, left=100,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.window.focus();
             popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
                 '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
                 '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body style="text-align: center;"><div>' + couponDetails + '</div><p></p><div id="div-qr"></div></body>' +
+                '</head><body style="background-color: #FAFBFA; text-align: center;"><div>' + couponDetails +
+                '</div><p></p><div id="div-qr"></div></body>' +
                 '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
         } else {
             var popupWin = window.open('', '_blank', 'width=800,height=800,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
             popupWin.document.open();
-            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon</title>' +
+            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
                 '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
                 '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body><div></div>' + couponDetails + 
-                '<p></p><div id="div-qr"></div></body>' +
-                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "hello world"}); });</script></html>');
+                '</head><body style="background-color: #FAFBFA; text-align: center;"><div>' + couponDetails +
+                '</div><p></p><div id="div-qr"></div></body>' +
+                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
             popupWin.document.close();
         }
         popupWin.document.close();
