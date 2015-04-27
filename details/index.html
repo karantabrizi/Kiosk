@@ -11,15 +11,15 @@
 
 <div ng-app="myApp" ng-controller="myCtrl">
     <div id="kiosk">
-        <div id="couponListSide" style="float: left;">
-            <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSelected(x.id)}" >
-                <div class="couponSide" ng-click="showDetails(x)" >
-                    <span style="color: #CC0000; font-size: 24px;">{{x.title}}</span><br>
-                    <span style="color: #666666; font-size: 18px;">{{x.subtitle}}</span><br>
-                    <span style="color: #999999; font-size: 14px;">{{x.expiration}}</span>
-                </div>
+        <div id="couponListSide">
+            <div class="couponBoxSide" ng-repeat="x in coupons" ng-class="{active : isSelected(x.id)}" ng-click="showDetails(x)">
+                <div class="inactiveImg" ng-class="{activeImg : isSelected(x.id)}"></div>
+                <div class="couponSide" >
+                    <span style="font-weight: 800;" >{{x.title}}</span><Span> {{x.subtitle}}</span>
             </div>
+                <div class="inactiveArr" ng-class="{activeArr : isSelected(x.id)}"></div>
         </div>
+            </div>
         <div id="couponDetails" style="float: left;">
             <div id="couponCutArea" style="float: left;" >
                 <div id="couponPrint">
