@@ -108,8 +108,10 @@ div#couponMoreText {
 .printerBox {
     font-size: 40px;
     position:absolute;
-    left: 700px;
-    top: 400px;
+    left: 660px;
+    top: 270px;
+    width:600px;
+    height:500px;
     background-color: white;
     text-align: center;
 
