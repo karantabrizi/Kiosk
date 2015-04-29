@@ -1,6 +1,6 @@
 app.controller("myCtrl", function($scope, $location) {
     $scope.mycid = $location.search().mycid;
-    
+    $scope.visible=false;
     $scope.coupons = [
         {"id":"1", "code":"ABCDEFGH", "discount":"20%", "title":"EXTRA 20% OFF ", "subtitle":"WITH JCP CARD PURCHASE", "expiration":"Valid 4/27-5/17"},
         {"id":"2", "code":"EFGHHIJK", "discount":"10%", "title":"$15 BONUS CASH", "subtitle":"WHEN YOU SPEND $50 OR MORE", "expiration":"Valid 4/27-5/17"},
@@ -21,37 +21,19 @@ app.controller("myCtrl", function($scope, $location) {
     };
     
     $scope.showDetails = function(currentCoupon) {
-        console.log(currentCoupon.title);
         $scope.selectedCoupon = currentCoupon;
+        $scope.visible=false;
     };
 
     $scope.printCoupon = function(elemId, mycode) {
         var couponDetails = document.getElementById(elemId).innerHTML;
-
-        if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-            var popupWin = window.open('', '_blank', 'width=800,height=800, left=100,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
-            popupWin.window.focus();
-            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
-                '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
-                '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body style="background-color: #FAFBFA; text-align: center;"><div>' + couponDetails +
-                '</div><p></p><div id="div-qr"></div></body>' +
-                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
-        } else {
-            var popupWin = window.open('', '_blank', 'width=800,height=800,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
-            popupWin.document.open();
-            popupWin.document.write('<!DOCTYPE html><html><head><title>Coupon -- ' + mycode + '</title>' +
-                '<script type="application/javascript" src="../jquery-1.8.2.js"></script>' +
-                '<script type="application/javascript" src="../jquery.qrcode-0.11.0.js"></script>' +
-                '</head><body style="background-color: #FAFBFA; text-align: center;"><div>' + couponDetails +
-                '</div><p></p><div id="div-qr"></div></body>' +
-                '<script>$(document).ready(function(){ $("#div-qr").qrcode({text: "' + mycode + '"}); });</script></html>');
-            popupWin.document.close();
-        }
-        popupWin.document.close();
+        $scope.visible=true;
     };
     
     $scope.isSelected = function(boxID){
       return $scope.selectedCoupon.id === boxID;
     };
+    $scope.hideBox= function(){
+        $scope.visible=false;
+    }
 });

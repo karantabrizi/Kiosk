@@ -51,12 +51,12 @@
             <div id="stickySignIn"></div>
             <div class="nofloat"></div>
         </div>
-        <div id="printerBox">
-            <div>{{selectedCoupon.title}} -- mycode </div>
+        <div class="printerBox" ng-class="{visible : visible}">
+            <div>{{selectedCoupon.title}}</div>
             <div>{{selectedCoupon.expiration}}</div>
             <p></p>
             <div id="div-qr"></div>
-            <div class="printBoxButton"><button >Print</button><button>Cancel</button></div>
+            <div class="printBoxButton"><button >Print</button><button ng-click="hideBox()">Cancel</button></div>
         </div>
     </div>
 </div>
