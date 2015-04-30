@@ -56,6 +56,13 @@ div#stickySignIn {
     float: left;
 }
 
+div#stickyBlankGrey {
+    width: 200px;
+    height: 200px;
+    background-image: url(./images/blank_grey.png);
+    float: left;
+}
+
 div.nofloat {
     clear:both;
 }
