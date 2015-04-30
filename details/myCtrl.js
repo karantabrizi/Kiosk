@@ -7,8 +7,8 @@ app.controller("myCtrl", function($scope, dataFactory, $location) {
         {"id":"2", "code":"EFGHHIJK", "discount":"20%", "title":"$10 OFF", "subtitle":"WHEN YOU SPEND $25 OR MORE", "expiration":"Valid 4/27-5/17"},
         {"id":"3", "code":"HIJKLMNO", "discount":"15%", "title":"EXTRA 15% OFF", "subtitle":"WHEN YOU SPEND $40 OR MORE", "expiration":"Valid 4/27-5/17"},
         {"id":"4", "code":"LMNOPQRW", "discount":"10%", "title":"$20 BONUS CASH", "subtitle":"WHEN YOU SPEND $60 OR MORE", "expiration":"Valid 4/27-5/17"}, 
-        {"id":"5", "code":"PQRSTUVW", "discount":"20%", "title":"EXTRA 20% OFF ", "subtitle":"WITH JCP CARD PUCHASE", "expiration":"Valid 4/27-5/31"},
-        {"id":"6", "code":"TUVWXYZA", "discount":"15%", "title":"EXTRA 15% OFF", "subtitle":"WHEN YOU SPEND $40 OR MORE", "expiration":"Valid 4/27-5/31"}
+        /*{"id":"5", "code":"PQRSTUVW", "discount":"20%", "title":"EXTRA 20% OFF ", "subtitle":"WITH JCP CARD PUCHASE", "expiration":"Valid 4/27-5/31"},
+        {"id":"6", "code":"TUVWXYZA", "discount":"15%", "title":"EXTRA 15% OFF", "subtitle":"WHEN YOU SPEND $40 OR MORE", "expiration":"Valid 4/27-5/31"}*/
     ];
     
     //default one
