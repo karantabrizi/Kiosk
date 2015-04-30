@@ -31,10 +31,11 @@
                     <span style="color: #CC0000; font-size: 30px;">WITH DESIGNER OR SENIOR DESIGNER</span></p>
                 </div>
                 <div id="couponBarcode">
-                    <p style="color: #7A7A7A; font-size: 20px;">TO SAVE IN STORES, USE BARCODE, <span style="color: black; font-weigth:bold; font-size: 20px;" ng-click='printConfirmationBox()'>PRINT COUPON ></span>
+                    <p style="color: #7A7A7A; font-size: 20px;">TO SAVE IN STORES, USE PRINTED BARCODE 
                     </p>
                     <p style="color: lightgrey; font-size: 12px;" ><img src="../images/barcode.png" alt="{{selectedCoupon.code}}" /></p>
                 </div>
+                <span style="color: black; font-weigth:800px; font-size: 36px; text-decoration: underline;" ng-click='sendToPrinter(selectedCoupon.code)'>PRINT COUPON</span>
             </div>
             <div id="couponMoreText" style="float: left">
                 <span style="color: #A7A7A7; font-size: 18px; font-family:Arial;"><b style="color: #7A7A7A;">* {{selectedCoupon.expiration}},</b> {{selectedCoupon.discount}} off formal updo or natural styling with a designer or senior designer, excluding taxes. New clients only. One coupon per customer, per transaction, must be provided/surrendered  at time of purchase. Coupon cannot be combined with any other offer. Coupon cannot be used for payment on account. Coupon cannot be redeemed as cash or merchandise credit if merchandise is returned. Savings applyed on qualifying items on prorated basis. No cash value. REPRODUCTIONS WILL NOT BE ACCEPTED.</span>
