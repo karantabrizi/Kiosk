@@ -4,6 +4,7 @@ div#couponListSide {
     border: 1px solid grey;
     overflow-x: hidden;
     overflow-y: scroll;
+    background-color: #DCDCDC;
     padding: 0px;
     width: 550px;
     height: 880px;
