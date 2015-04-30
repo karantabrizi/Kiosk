@@ -52,7 +52,7 @@ div#couponCutArea {
     text-transform: uppercase;
     text-align: center;
     width: 1300px;
-    height: 600px;
+    height: 650px;
 }
 
 div#couponMoreText {
@@ -63,7 +63,7 @@ div#couponMoreText {
     border: 0px solid grey;
     padding: 0px;
     width: 1300px;
-    height: 190px;
+    height: 140px;
 }
 
 .active {
