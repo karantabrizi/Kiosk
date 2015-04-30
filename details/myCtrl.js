@@ -1,5 +1,6 @@
-app.controller("myCtrl", function($scope, $location) {
+app.controller("myCtrl", function($scope, dataFactory, $location) {
     $scope.mycid = $location.search().mycid;
+    $scope.message = '';
     $scope.visible=false;
     $scope.coupons = [
         {"id":"1", "code":"ABCDEFGH", "discount":"20%", "title":"EXTRA 20% OFF ", "subtitle":"WITH JCP CARD PURCHASE", "expiration":"Valid 4/27-5/17"},
@@ -25,14 +26,25 @@ app.controller("myCtrl", function($scope, $location) {
         $scope.visible=false;
     };
 
-    $scope.printCoupon = function(elemId, mycode) {
-        var couponDetails = document.getElementById(elemId).innerHTML;
+    $scope.printConfirmationBox = function() {
         $scope.visible=true;
+    };
+    
+    $scope.sendToPrinter = function(mycode) {
+        dataFactory.printQRCode(mycode)
+            .success(function () {
+                $scope.message = 'Sent ' + mycode + ' to printer';
+            })
+        .error(function (error) {
+              $scope.message = 'Failed to send ' + mycode + ' to printer';
+        });
+        $scope.visible=false;
     };
     
     $scope.isSelected = function(boxID){
       return $scope.selectedCoupon.id === boxID;
     };
+    
     $scope.hideBox= function(){
         $scope.visible=false;
     }
