@@ -12,9 +12,8 @@
         <div id="couponList">
             <div class="couponBox" ng-repeat="x in coupons">
                 <div class="coupon" ng-click="showDetails(x.id)">
-                    <span style="color: #CC0000; font-size: 36px; font-weight:bold;">{{x.title}}</span><br>
-                    <span style="color: #666666; font-size: 28px;">{{x.subtitle}}</span><br>
-                    <span style="color: #999999; font-size: 24px;">{{x.expiration}}</span>
+                    <img ng-src = "{{x.image}}"><br>
+                    
                 </div>
             </div>
             <div class="nofloat"></div>
